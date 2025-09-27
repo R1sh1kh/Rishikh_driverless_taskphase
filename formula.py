@@ -1,23 +1,24 @@
-n= int(input("Enter number"))
-count = 0
-lst =[]
+n = int(input("Enter number of strings: "))
+lst = []
 dict={}
+count = 1
 for i in range(n):
     string = input("Enter string")
+    string.lower()
     lst.append(string)
 
-alphabets = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-for i in alphabets:
-    
-    count =0
-    for word in lst:
-        for letter in word:
-            if letter == i:
-                count = count + 1
-    dict[i]= count
+for word in lst:
+    for letter in word:
+        if letter in dict:
+           
+            dict[letter] = dict[letter] + 1
 
-for j in dict:
-    print( j, ":", dict[j])
-    
+        else :
+            dict [letter] = 1
+
+for word in lst:
+    for letter in word:
+        print( letter, ":", dict[letter])
+
 
 
